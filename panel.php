@@ -11,11 +11,9 @@
       <link rel="stylesheet" href="style1.css">
     </head>
     <body>
-			<div id="header">
-				<div class="wrap">
-					<p>Welcome to the</p>
-					<h1>DIVINE CHALLENGE</h1>
-				</div>
-			</div>
+	<div id="header">
+		<p>Welcome to the</p>
+		<h1>DIVINE CHALLENGE</h1>
+	</div>
     </body>
 </html>
