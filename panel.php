@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="style1.css">
     </head>
     <body>
-		<div id="header">
+			<div id="header">
 				<p>Welcome to the</p>
 				<h1>DIVINE CHALLENGE</h1>
 			</div>
