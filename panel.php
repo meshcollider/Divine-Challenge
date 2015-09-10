@@ -8,7 +8,7 @@
       <meta name="author" content="R123T">
 
       <!-- CSS -->
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="style1.css">
     </head>
     <body>
 			<div id="header">
