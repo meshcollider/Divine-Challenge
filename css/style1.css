@@ -1,5 +1,10 @@
+/**********************************
+PANEL - CSS File
+***********************************/
+
 body {
-  font-family: 'Courier New';
+	font-family: 'Courier New';
+	margin: -25px 0 !important;
 }
 
 /** 
@@ -26,3 +31,126 @@ h1 {
 /**
 Header End
 **/
+
+
+
+/** 
+Page Content Start
+**/
+
+#content p {
+	text-align: center;
+	color: #04BFFF;
+	font-weight: 900;
+	
+}
+
+/**
+Instructions-box
+**/
+
+.box {
+  border-radius: 25px;
+	border: 2px solid #04BFFF;
+	text-align: center;
+	margin: auto;
+	width: 60%;
+	padding: 10px;
+}
+
+#boxTitle {
+	margin: -2px;
+	margin-bottom: 20px;
+}
+
+/**
+Answer Form & TextBox
+**/
+
+#answerForm {
+	width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+	margin-top: 84px;
+}
+
+#answerForm p{
+	margin: 8px;
+}
+.textBox { 
+	background-color: #00bfff; 
+	border-radius: 11px; 
+	border-color: #1074ff; 
+	border-style: solid; 
+	border-width: 2px; 
+	color: #fff0ff; 
+	font-size: 21px; 
+	padding: 10px;
+	display: block;
+	width: 50%;
+	height: 60%;
+  margin: 0 auto;
+} 
+
+.textBox:focus { 
+	outline: none; 
+} 
+
+/*+
+Button
+**/
+
+.btn {
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: Courier New;
+  color: #73d0ff;
+  font-size: 16px;
+  background: #006aff;
+  border: solid #00bfff 2px;
+  text-decoration: none;
+	padding: 10px;
+	display: block;
+	width: 29%;
+	height: 60%;
+  margin: 7px auto;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+/**
+Footer
+**/
+
+#footer {
+	position: absolute;
+	border-top: solid #00BFFF;
+	left: 0;
+	bottom: 0;
+	height: 40px;
+	width: 100%;
+	background-color: #006AFF;
+}
+
+#footer p  {
+	color: white;
+	margin-right: 15px;
+	margin-top: 12px;
+}
+
+.alignLeft {
+	float: left;
+	margin-left: 15px;
+}
+.alignRight {
+	float: right;
+}
