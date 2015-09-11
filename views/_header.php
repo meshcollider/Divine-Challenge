@@ -6,9 +6,9 @@
 </head>
 <body>
     <div id="header">
-		<p>Welcome to the</p>
-		<h1>DIVINE CHALLENGE</h1>
-	</div>
+	<p>Welcome to the</p>
+	<h1>DIVINE CHALLENGE</h1>
+    </div>
 <?php
 // show potential errors / feedback (from login object)
 if (isset($login)) {
