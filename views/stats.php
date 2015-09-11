@@ -8,7 +8,7 @@
       <meta name="author" content="Divine">
 
       <!-- CSS -->
-      <link rel="stylesheet" href="style2.css">
+      <link rel="stylesheet" href="../css/style2.css">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 			
 	<!-- JS -->
