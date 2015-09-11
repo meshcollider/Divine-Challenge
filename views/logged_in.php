@@ -10,10 +10,6 @@
       <link rel="stylesheet" href="css/style1.css">
     </head>
     <body>
-	<div id="header">
-		<p>Welcome to the</p>
-		<h1>DIVINE CHALLENGE</h1>
-	</div>
 	<?php include('_header.php'); ?>
 
 	<?php
