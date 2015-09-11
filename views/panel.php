@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="css/style1.css">
     </head>
     <body>
-	  <?php include('_header.php'); ?>
+		<?php include('_header.php'); ?>
 			<div id="content">
 				<p style="margin-bottom: 26px;">Challenge number: <?php echo $login->user_current_challenge; ?></p>
 				<div class="box">
@@ -24,6 +24,6 @@
 					<input type="button" class="btn" value="SUBMIT">
 				</div>
 			</div>
-	<?php include('_footer.php'); ?>
+		<?php include('_footer.php'); ?>
    </body>
 </html>
