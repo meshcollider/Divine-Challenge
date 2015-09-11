@@ -3,6 +3,9 @@
 <!-- show registration form, but only if we didn't submit already -->
 <?php if (!$registration->registration_successful && !$registration->verification_successful) { ?>
 <form method="post" action="register.php" name="registerform">
+    <label for="user_uid">Hackforums UID</label>
+    <input id="user_uid" type="number" step="1" min="1" name="user_uid" required />
+
     <label for="user_name"><?php echo WORDING_REGISTRATION_USERNAME; ?></label>
     <input id="user_name" type="text" pattern="[a-zA-Z0-9]{2,64}" name="user_name" required />
 
