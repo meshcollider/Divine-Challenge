@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
       <meta charset="utf-8">
-      <title>Challlenge Panel - Divine Challenge</title>
+      <title>Challenge Panel - Divine Challenge</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="Divine Challenge Panel">
       <meta name="author" content="Divine">
