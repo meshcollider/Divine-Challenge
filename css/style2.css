@@ -3,8 +3,8 @@ Stats Panel - CSS File
 ***********************************/
 
 body {
-	font-family: 'Courier New';
-	margin: -25px 0 !important;
+  font-family: 'Courier New';
+  margin: -25px 0 !important;
 }
 
 /** 
@@ -39,14 +39,14 @@ Page Content Start
 **/
 
 #content p {
-	text-align: center;
-	color: #04BFFF;
-	font-weight: 900;
+ text-align: center;
+ color: #04BFFF;
+ font-weight: 900;
 	
 }
 
 #title {
-	font-size: 2em;
+  font-size: 2em;
 	
 }
 
@@ -55,14 +55,14 @@ Table Layout
 **/
 
 #tableForm {
-	width: 500px;
+  width: 500px;
   margin-left: auto;
   margin-right: auto;
-	margin-top: 84px;
+  margin-top: 84px;
 }
 
 #tableForm p{
-	margin: 8px;
+  margin: 8px;
 }
 
 /**
@@ -70,39 +70,39 @@ Table
 **/
 
 .datagrid table { 
-	border-collapse: collapse; 
-	text-align: left; 
-	width: 100%; 
+  border-collapse: collapse; 
+  tex0t-align: left; 
+  width: 100%; 
 } 
 
 .datagrid {
-	font: normal 12px/150% Courier New, Courier, monospace; 
-	background: #fff; 
-	overflow: hidden; 
-	border: 2px solid #004BFF; 
-	-webkit-border-radius: 3px; 
-	-moz-border-radius: 3px; 
-	border-radius: 3px; 
+  font: normal 12px/150% Courier New, Courier, monospace; 
+  background: #fff; 
+  overflow: hidden; 
+  border: 2px solid #004BFF; 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  border-radius: 3px; 
 }
 
 .datagrid table td, .datagrid table th { 
-	padding: 6px 10px; 
+  padding: 6px 10px; 
 }
 
 .datagrid table tbody td { 
-	color: #0A9DFF; 
-	border-left: 2px solid #004BFF;
-	font-size: 17px;
-	border-bottom: 2px solid #004BFF;
-	font-weight: normal; 
+  color: #0A9DFF; 
+  border-left: 2px solid #004BFF;
+  font-size: 17px;
+  border-bottom: 2px solid #004BFF;
+  font-weight: normal; 
 }
 
 .datagrid table tbody td:first-child { 
-	border-left: none; 
+  border-left: none; 
 }
 
 .datagrid table tbody tr:last-child td { 
-	border-bottom: none; 
+  border-bottom: none; 
 }
 /**
 Footer
