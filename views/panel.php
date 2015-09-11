@@ -8,7 +8,7 @@
       <meta name="author" content="Divine">
 
       <!-- CSS -->
-      <link rel="stylesheet" href="css/style1.css">
+      <link rel="stylesheet" href="../css/style1.css">
     </head>
     <body>
 	<?php include('_header.php'); ?>
