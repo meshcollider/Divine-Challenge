@@ -17,15 +17,16 @@
 	<div align="center">
 		<p>Please Login</p><br />
 		<form method="post" action="index.php" name="loginform">
-			<label for="user_name"><?php echo WORDING_USERNAME; ?></label>
-			<input id="user_name" type="text" name="user_name" required /><br />
-			<label for="user_password"><?php echo WORDING_PASSWORD; ?></label>
-			<input id="user_password" type="password" name="user_password" autocomplete="off" required /><br />
+			<label for="user_name"><?php echo WORDING_USERNAME; ?></label><br />
+			<input id="user_name" type="text" name="user_name" required /><br /><br />
+			<label for="user_password"><?php echo WORDING_PASSWORD; ?></label><br />
+			<input id="user_password" type="password" name="user_password" autocomplete="off" required /><br /><br />
 			<input type="checkbox" id="user_rememberme" name="user_rememberme" value="1" />
-			<label for="user_rememberme"><?php echo WORDING_REMEMBER_ME; ?></label><br />
+			<label for="user_rememberme"><?php echo WORDING_REMEMBER_ME; ?></label><br /><br />
 			<input type="submit" class="btn" name="login" value="<?php echo WORDING_LOGIN; ?>" />
 		</form>
 		
+		<br />
 		<a href="register.php"><?php echo WORDING_REGISTER_NEW_ACCOUNT; ?></a>
 	</div>
 	<?php include('_footer.php'); ?>
