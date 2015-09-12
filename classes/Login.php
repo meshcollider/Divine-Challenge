@@ -187,7 +187,7 @@ class Login
     private function loginWithSessionData()
     {
         $this->user_name = $_SESSION['user_name'];
-        $this->user_email = $_SESSION['user_email'];
+        $this->user_email = "";
 
         // set logged in status to true, because we just checked for this:
         // !empty($_SESSION['user_name']) && ($_SESSION['user_logged_in'] == 1)
@@ -209,7 +209,7 @@ class Login
                 // cookie looks good, try to select corresponding user
                 if ($this->databaseConnection()) {
                     // get real token from database (and all other data)
-                    $sth = $this->db_connection->prepare("SELECT user_id, user_name, user_email FROM users WHERE user_id = :user_id
+                    $sth = $this->db_connection->prepare("SELECT user_id, user_name FROM users WHERE user_id = :user_id
                                                       AND user_rememberme_token = :user_rememberme_token AND user_rememberme_token IS NOT NULL");
                     $sth->bindValue(':user_id', $user_id, PDO::PARAM_INT);
                     $sth->bindValue(':user_rememberme_token', $token, PDO::PARAM_STR);
@@ -221,18 +221,20 @@ class Login
                         // write user data into PHP SESSION [a file on your server]
                         $_SESSION['user_id'] = $result_row->user_id;
                         $_SESSION['user_name'] = $result_row->user_name;
-                        $_SESSION['user_email'] = $result_row->user_email;
+                        $_SESSION['user_email'] = "";
                         $_SESSION['user_logged_in'] = 1;
+						$_SESSION['current_challenge_id'] = $result_row->user_current_challenge_id;
+						$_SESSION['hf_uid'] = $result_row->user_hf_uid;
 
                         // declare user id, set the login status to true
                         $this->user_id = $result_row->user_id;
                         $this->user_name = $result_row->user_name;
-                        $this->user_email = $result_row->user_email;
+                        $this->user_email = "";
                         $this->user_is_logged_in = true;
 
                         //added -saadtronics
                         $this->user_uid = $result_row->user_hf_uid;
-                        $this->user_current_challenge = $result->user_current_challenge_id;
+                        $this->user_current_challenge = $result_row->user_current_challenge_id;
 
                         // Cookie token usable only once
                         $this->newRememberMeCookie();
@@ -262,22 +264,9 @@ class Login
 
         // if POST data (from login form) contains non-empty user_name and non-empty user_password
         } else {
-            // user can login with his username or his email address.
-            // if user has not typed a valid email address, we try to identify him with his user_name
-            if (!filter_var($user_name, FILTER_VALIDATE_EMAIL)) {
-                // database query, getting all the info of the selected user
-                $result_row = $this->getUserData(trim($user_name));
-
-            // if user has typed a valid email address, we try to identify him with his user_email
-            } else if ($this->databaseConnection()) {
-                // database query, getting all the info of the selected user
-                $query_user = $this->db_connection->prepare('SELECT * FROM users WHERE user_email = :user_email');
-                $query_user->bindValue(':user_email', trim($user_name), PDO::PARAM_STR);
-                $query_user->execute();
-                // get result row (as an object)
-                $result_row = $query_user->fetchObject();
-            }
-
+            // user can login with his username only.
+            $result_row = $this->getUserData(trim($user_name));
+			
             // if this user not exists
             if (! isset($result_row->user_id)) {
                 // was MESSAGE_USER_DOES_NOT_EXIST before, but has changed to MESSAGE_LOGIN_FAILED
@@ -290,7 +279,7 @@ class Login
                 // increment the failed login counter for that user
                 $sth = $this->db_connection->prepare('UPDATE users '
                         . 'SET user_failed_logins = user_failed_logins+1, user_last_failed_login = :user_last_failed_login '
-                        . 'WHERE user_name = :user_name OR user_email = :user_name');
+                        . 'WHERE user_name = :user_name');
                 $sth->execute(array(':user_name' => $user_name, ':user_last_failed_login' => time()));
 
                 $this->errors[] = MESSAGE_PASSWORD_WRONG;
@@ -301,14 +290,20 @@ class Login
                 // write user data into PHP SESSION [a file on your server]
                 $_SESSION['user_id'] = $result_row->user_id;
                 $_SESSION['user_name'] = $result_row->user_name;
-                $_SESSION['user_email'] = $result_row->user_email;
+                $_SESSION['user_email'] = "";
                 $_SESSION['user_logged_in'] = 1;
 
+				$_SESSION['current_challenge_id'] = $result_row->user_current_challenge_id;
+				$_SESSION['hf_uid'] = $result_row->user_hf_uid;
+						
                 // declare user id, set the login status to true
                 $this->user_id = $result_row->user_id;
                 $this->user_name = $result_row->user_name;
-                $this->user_email = $result_row->user_email;
+                $this->user_email = "";
                 $this->user_is_logged_in = true;
+				
+				$this->user_uid = $result_row->user_hf_uid;
+                $this->user_current_challenge = $result_row->user_current_challenge_id;
 
                 // reset the failed login counter for that user
                 $sth = $this->db_connection->prepare('UPDATE users '
@@ -796,5 +791,13 @@ class Login
 	public function getCurrentChallengeID()
     {
         return $this->user_current_challenge;
+    }
+	
+	public function incrementCurrentChallengeID()
+    {
+		$setChallenge = $this->db_connection->prepare('UPDATE users '
+                        . 'SET user_current_challenge_id = user_current_challenge_id+1'
+                        . 'WHERE user_name = :user_name');
+        $this->user_current_challenge = $this->user_current_challenge + 1;
     }
 }

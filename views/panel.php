@@ -15,7 +15,7 @@
 
 	<div id="content">
 		<p>Challenge Panel</p><br />
-		<p style="margin-bottom: 26px;">Challenge number: <?php echo $login->getCurrentChallengeID(); ?></p>
+		<p style="margin-bottom: 26px;">Challenge number: <?php echo htmlspecialchars($_SESSION['current_challenge_id']) ?></p>
 		<div class="box">
 			<p id="boxTitle">Instructions:</p>
 			<p>INSTRUCTIONS	GO HERE. THIS WILL BE TAKEN FROM THE DATABASE</p>

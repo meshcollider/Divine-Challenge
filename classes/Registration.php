@@ -130,7 +130,7 @@ class Registration
                 $user_activation_hash = sha1(uniqid(mt_rand(), true));
 
                 // write new users data into database
-                $query_new_user_insert = $this->db_connection->prepare('INSERT INTO users (user_name, user_password_hash, user_registration_ip, user_registration_datetime, user_hf_uid, user_current_challenge_id) VALUES(:user_name, :user_password_hash, :user_registration_ip, now(), :uid, "0"")');
+                $query_new_user_insert = $this->db_connection->prepare('INSERT INTO users (user_name, user_password_hash, user_registration_ip, user_registration_datetime, user_hf_uid) VALUES(:user_name, :user_password_hash, :user_registration_ip, now(), :uid)');
                 $query_new_user_insert->bindValue(':user_name', $user_name, PDO::PARAM_STR);
                 $query_new_user_insert->bindValue(':user_password_hash', $user_password_hash, PDO::PARAM_STR);
                 $query_new_user_insert->bindValue(':user_registration_ip', $_SERVER['REMOTE_ADDR'], PDO::PARAM_STR);
