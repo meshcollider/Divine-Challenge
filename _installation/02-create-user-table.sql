@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `users` (
  `user_registration_datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
  `user_registration_ip` varchar(39) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0.0.0.0',
  `user_current_challenge_id` int(11) NOT NULL DEFAULT '1',
- `user_hf_uid` int(7) NOT NULL
+ `user_hf_uid` int(7) NOT NULL,
  PRIMARY KEY (`user_id`),
  UNIQUE KEY `user_name` (`user_name`),
  UNIQUE KEY `user_email` (`user_email`),
