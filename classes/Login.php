@@ -792,4 +792,9 @@ class Login
         // the image url like above but with an additional <img src .. /> around
         $this->user_gravatar_image_tag = $url;
     }
+	
+	public function getCurrentChallengeID()
+    {
+        return $this->user_current_challenge;
+    }
 }
