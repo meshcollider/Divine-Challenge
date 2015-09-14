@@ -90,7 +90,7 @@ class Registration
         } elseif (empty($user_name)) {
             $this->errors[] = MESSAGE_USERNAME_EMPTY;
         } elseif (empty($user_uid)) {
-            $this->errors[] = 'Your UID is empty';
+            $this->errors[] = MESSAGE_UID_EMPTY;
         } elseif (empty($user_password) || empty($user_password_repeat)) {
             $this->errors[] = MESSAGE_PASSWORD_EMPTY;
         } elseif ($user_password !== $user_password_repeat) {
@@ -143,7 +143,7 @@ class Registration
                 if ($query_new_user_insert) {
                     // send a verification email
 
-                    $this->messages[] = 'Registration successfull';
+                    $this->messages[] = WORDING_REGISTRATION_SUCCESSFUL;
                     $this->registration_successful = true;
 
                     /*if ($this->sendVerificationEmail($user_id, $user_email, $user_activation_hash)) {
