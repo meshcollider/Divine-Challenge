@@ -51,6 +51,7 @@ define("MESSAGE_USERNAME_SAME_LIKE_OLD_ONE", "Sorry, that username is the same a
 
 // views
 define("WORDING_BACK_TO_LOGIN", "Back to Login Page");
+define("WORDING_REGISTRATION_SUCCESSFUL", "Registration Successful");
 define("WORDING_CHANGE_EMAIL", "Change email");
 define("WORDING_CHANGE_PASSWORD", "Change password");
 define("WORDING_CHANGE_USERNAME", "Change username");
