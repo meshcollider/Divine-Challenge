@@ -7,6 +7,16 @@ body {
 	margin: -25px 0 !important;
 }
 
+.warning {
+		color: red;
+		text-align: center;
+}
+
+.success {
+		color: green;
+		text-align: center;
+}
+
 /** 
 Header Start
 **/
