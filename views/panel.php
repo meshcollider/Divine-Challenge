@@ -1,7 +1,7 @@
 <?php 
 
     $username = DB_USER; 
-    $password = DB_PASS 
+    $password = DB_PASS; 
     $host = DB_HOST; 
     $dbname = DB_NAME; 
 
@@ -43,8 +43,45 @@
         undo_magic_quotes_gpc($_COOKIE); 
     } 
      
+	$solutionMessage = "";
+
+	if(isset($_POST['solution'])) {
+		$solution = $_POST['solution'];
+		if($solution == $_SESSION['current_challenge_solution']) {
+			$solutionMessage = "<div class='successBox'>Correct</div>";
+			
+			//update the challenge ID and database
+			
+			$query = " 
+				UPDATE `users` 
+				SET `user_current_challenge_id` = `user_current_challenge_id` + 1
+				WHERE `user_id` = :user_id 
+			"; 
+			
+			$query_params = array( 
+				':user_id' => $_SESSION['user_id']
+			); 				
+			
+			try 
+			{ 
+				$stmt = $db->prepare($query); 
+				$result = $stmt->execute($query_params); 
+				$_SESSION['current_challenge_id'] += 1;
+			} 
+			
+			catch(PDOException $ex) 
+			{ 
+				 die("Failed to run query: " . $ex); 
+			} 
+			
+		}
+		else {
+			$solutionMessage = "<div class='errorBox'>Incorrect</div>";
+		}
+	}
+
     header('Content-Type: text/html; charset=utf-8'); 
-     
+    
 
 		$query = " 
 			SELECT 
@@ -68,12 +105,52 @@
 				{ 
 			 die("Failed to run query"); 
 		} 
+		
 
 while ($row = $stmt->fetch()) {
  $challengeText = $row['challenge_instructions'];
  $challengeID = $row['challenge_id'];
  $challengeAuthor = $row['challenge_author'];
+ $challengeSolution = $row['challenge_answer'];
+ $_SESSION['current_challenge_solution'] = $challengeSolution;
 }		
+
+
+		$query = " 
+			SELECT 
+				*
+			FROM hints
+			WHERE
+				challenge_id = :id
+		"; 
+		
+		$query_params = array( 
+			':id' => $_SESSION['current_challenge_id']
+		); 				
+
+		try 
+			{ 
+
+			$stmt = $db->prepare($query); 
+			$result = $stmt->execute($query_params); 	} 
+		
+		catch(PDOException $ex) 
+				{ 
+			 die("Failed to run query"); 
+		} 
+		
+		$hints = "";
+		
+while ($row = $stmt->fetch()) {
+	 $hintStatus = $row['hint_status'];
+	 
+	 if($hintStatus == 1) { //if we should show the hint
+		$hintText = $row['hint_text'];
+		$hintID = $row['hint_id'];
+		
+		$hints .= "Hint: " . $hintText . "\n";
+	 }
+}
 		
 ?>
 
@@ -98,10 +175,18 @@ while ($row = $stmt->fetch()) {
 			<p id="boxTitle">Instructions:</p>
 			<p><?php echo $challengeText ?></p>
 		</div>
+		<div id="hints" align="center">
+			<p class="hintsBox"><?php echo $hints; ?></p>
+		</div>
+		<div id="message" align="center">
+			<p class="solutionMessage"><?php echo $solutionMessage; ?></p>
+		</div>
 		<div id="answerForm">
-			<p>Solution:</p>
-			<input type="text" name="answer" class="textBox" value="">
-			<input type="button" class="btn" value="SUBMIT">
+			<form method="post">
+				<p>Solution:</p>
+				<input type="text" name="solution" class="textBox" value="">
+				<input type="submit" class="btn" value="SUBMIT">
+			</form>
 		</div>
 	</div>
 	

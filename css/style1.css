@@ -105,6 +105,25 @@ Answer Form & TextBox
 	outline: none; 
 } 
 
+.successBox {
+	border-radius: 25px;
+	border: 2px solid #00FF00;
+	text-align: center;
+	margin: auto;
+	width: 60%;
+	padding: 10px;
+	background-color: CCFFCC;
+}
+
+.errorBox {
+	border-radius: 25px;
+	border: 2px solid #FF0000;
+	text-align: center;
+	margin: auto;
+	width: 60%;
+	padding: 10px;
+}
+
 /**
 Button
 **/
