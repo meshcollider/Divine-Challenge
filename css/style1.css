@@ -7,6 +7,16 @@ body {
 	margin: -25px 0 !important;
 }
 
+.warning {
+		color: red;
+		text-align: center;
+}
+
+.success {
+		color: green;
+		text-align: center;
+}
+
 /** 
 Header Start
 **/
@@ -94,6 +104,25 @@ Answer Form & TextBox
 .textBox:focus { 
 	outline: none; 
 } 
+
+.successBox {
+	border-radius: 25px;
+	border: 2px solid #00FF00;
+	text-align: center;
+	margin: auto;
+	width: 60%;
+	padding: 10px;
+	background-color: CCFFCC;
+}
+
+.errorBox {
+	border-radius: 25px;
+	border: 2px solid #FF0000;
+	text-align: center;
+	margin: auto;
+	width: 60%;
+	padding: 10px;
+}
 
 /**
 Button
