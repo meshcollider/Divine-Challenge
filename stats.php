@@ -82,6 +82,12 @@
 			<div class="datagrid">
 				<table>
 					<tbody>
+					<tr>
+						<td>Rank</td>
+						<td>User</td>
+						<td>HF UID</td>
+						<td>Challenge ID</td>
+					</tr>
 						<?php
 							try 
 							{ 
