@@ -16,7 +16,7 @@
 	
 	<div align="center">
 		<p>Please Login</p><br />
-		<form method="post" action="index.php" name="loginform">
+		<form method="post" action="panel" name="loginform">
 			<label for="user_name"><?php echo WORDING_USERNAME; ?></label><br />
 			<input id="user_name" type="text" name="user_name" required /><br /><br />
 			<label for="user_password"><?php echo WORDING_PASSWORD; ?></label><br />
