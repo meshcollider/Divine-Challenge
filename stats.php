@@ -82,15 +82,37 @@
 			<div class="datagrid">
 				<table>
 					<tbody>
-						<tr><td>1</td><td>MeshCollider</td><td>2015410</td><td>7</td></tr>
-						<tr><td>2</td><td>Nex</td><td>1234567</td><td>6</td></tr>
-						<tr><td>3</td><td>Omni</td><td>1234567</td><td>6</td></tr>
+						<?php
+							try 
+							{ 
+								$result = $db->query("SELECT user_name, user_hf_uid, user_current_challenge_id FROM users ORDER BY user_current_challenge_id DESC");
+								$rank = 1;
+
+								if ($result) {
+									while ($row = $result->fetch()) {
+										echo "<tr><td>{$rank}</td>
+											  <td>{$row['user_name']}</td>
+											  <td>{$row['user_hf_uid']}</td>
+											  <td>{$row['user_current_challenge_id']}</td></tr>";
+
+										$rank++;
+										if(rank > 10) break;
+									}
+								}
+							} 
+			
+							catch(PDOException $ex) 
+							{ 
+								 die("Error getting leaderboard: " . $ex); 
+							} 
+							
+						?>
 					</tbody>
 				</table>
 			</div>
 		<div id="footer">
 			<p class="alignLeft">Copyright (C) Divine 2015</p>
-			<p class="alignRight"> Support Thread (LINK)</p>
+			<p class="alignRight"><a href="http://hackforums.net/showthread.php?tid=4990509">Support Thread</a></p>
 			<div style="clear: both;"></div>
 		</div>
 	</div>
