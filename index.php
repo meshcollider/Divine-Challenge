@@ -25,7 +25,7 @@
 <div id="particles">
   <div class="intro">
     <h1>Divine Challenge</h1>
-    <p class="chaffle" data-lang="ja-hiragana">Test Your Knowledge and Skill</p>
+	<p class="chaffle" style="display: inline-block" data-lang="ja-hiragana">Test Your Knowledge and Skill</p><br />
     <a href="panel" class="btn">Login</a> 
     <a href="register" class="btn">Register</a>
   </div>
