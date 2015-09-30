@@ -42,7 +42,7 @@
 		<?php } ?>
 
 		<br />
-		<a href="index.php"><?php echo WORDING_BACK_TO_LOGIN; ?></a>
+		<a href="panel"><?php echo WORDING_BACK_TO_LOGIN; ?></a>
 
 	</div>
 		

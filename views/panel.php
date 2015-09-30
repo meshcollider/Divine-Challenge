@@ -194,7 +194,7 @@ while ($row = $stmt->fetch()) {
 	
 	<div align="center">
 		<?php echo WORDING_YOU_ARE_LOGGED_IN_AS . htmlspecialchars($_SESSION['user_name']) . "<br />"; ?>
-		<a href="index.php?logout"><?php echo WORDING_LOGOUT; ?></a>
+		<a href="index?logout"><?php echo WORDING_LOGOUT; ?></a>
 	</div>
 	
 	<?php include('_footer.php'); ?>

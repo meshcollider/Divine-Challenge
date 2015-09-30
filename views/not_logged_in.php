@@ -27,7 +27,7 @@
 		</form>
 		
 		<br />
-		<a href="register.php"><?php echo WORDING_REGISTER_NEW_ACCOUNT; ?></a>
+		<a href="register"><?php echo WORDING_REGISTER_NEW_ACCOUNT; ?></a>
 	</div>
 	<?php include('_footer.php'); ?>
    </body>
