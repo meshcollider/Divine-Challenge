@@ -1,20 +1,51 @@
+<?php 
+	require_once('config/config.php');
+	
+    $username = DB_USER; 
+    $password = DB_PASS; 
+    $host = DB_HOST; 
+    $dbname = DB_NAME; 
+	
+    try 
+    { 
+        $db = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password, $options); 
+    } 
+    catch(PDOException $ex) 
+    { 
+        die("Failed to connect to the database." . $ex); 
+        echo "fail";
+    } 
+     
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+     
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);  
+     
+	$numberRegistered = $db->query('select count(*) from users')->fetchColumn(); 		
+		
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-      <meta charset="utf-8">
-      <title>Stats - Divine Challenge</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Divine Challenge Panel">
-      <meta name="author" content="Divine">
+		<meta charset="UTF-8" /> 
+		<title>Stats - Divine Challenge</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/reset.css" />
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+		<script type='text/javascript' src='js/jquery.particleground.min.js'></script>
+		<script type='text/javascript' src='js/lol.js'></script>
+		<meta name="description" content="Divine Challenge Statistics">
+		<meta name="author" content="Divine">
 
-      <!-- CSS -->
-      <link rel="stylesheet" href="css/style2.css">
-	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/style3.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 			
-	<!-- JS -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+		<!-- JS -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 			
     </head>
     <body>
@@ -47,7 +78,7 @@
 			});
 		</script>
 		<div id="tableForm">
-			<p style="font-size: 1.1em;">REGISTERED PARTICIPANTS: 12</p>
+			<p style="font-size: 1.1em;">REGISTERED PARTICIPANTS: <?php echo $numberRegistered; ?></p>
 			<div class="datagrid">
 				<table>
 					<tbody>

@@ -1,9 +1,8 @@
-
 <!doctype html> 
 <html lang="en" class="no-js"> 
 <head> 
   <meta charset="UTF-8" /> 
-  <title>Divine</title> 
+  <title>Divine Challenge</title> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/reset.css" />
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>

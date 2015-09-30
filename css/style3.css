@@ -1,0 +1,116 @@
+/**********************************
+Stats Panel - CSS File
+***********************************/
+
+/** 
+Header Start
+**/
+
+#header {
+  float: left;
+  margin: 0 0 30px 0;
+  padding: 5px 0 0 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+/**
+Header End
+**/
+
+
+
+/** 
+Page Content Start
+**/
+
+#content p {
+ text-align: center;
+ font-weight: 900;
+	
+}
+
+#title {
+  font-size: 2em;
+	
+}
+
+/**
+Table Layout
+**/
+
+#tableForm {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 84px;
+}
+
+#tableForm p{
+  margin: 8px;
+}
+
+/**
+Table
+**/
+
+.datagrid table { 
+  border-collapse: collapse; 
+  tex0t-align: left; 
+  width: 100%; 
+} 
+
+.datagrid {
+  font: normal 12px/150% Courier New, Courier, monospace; 
+  background: #fff; 
+  overflow: hidden; 
+  border: 2px solid #004BFF; 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  border-radius: 3px; 
+}
+
+.datagrid table td, .datagrid table th { 
+  padding: 6px 10px; 
+}
+
+.datagrid table tbody td { 
+  color: #7b68ee; 
+  border-left: 2px solid #004BFF;
+  font-size: 17px;
+  border-bottom: 2px solid #004BFF;
+  font-weight: normal; 
+}
+
+.datagrid table tbody td:first-child { 
+  border-left: none; 
+}
+
+.datagrid table tbody tr:last-child td { 
+  border-bottom: none; 
+}
+/**
+Footer
+**/
+
+#footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 50px;
+	width: 100%;
+}
+
+#footer p  {
+	margin-right: 15px;
+	margin-top: 12px;
+}
+
+.alignLeft {
+	float: left;
+	margin-left: 15px;
+}
+.alignRight {
+	float: right;
+}
