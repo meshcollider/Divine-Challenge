@@ -20,7 +20,38 @@
      
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);  
      
-	$numberRegistered = $db->query('select count(*) from users')->fetchColumn(); 		
+	$numberRegistered = $db->query('select count(*) from users')->fetchColumn(); 
+
+	$leaderboard = "";
+	$maxChallengeID = 0;
+	
+	try 
+	{ 
+		$result = $db->query("SELECT user_name, user_hf_uid, user_current_challenge_id FROM users ORDER BY user_current_challenge_id DESC");
+		$rank = 1;
+
+		if ($result) {
+			while ($row = $result->fetch()) {
+				
+				if(rank == 1) {
+					$maxChallengeID = $row['user_current_challenge_id'];
+				}
+				
+				$leaderboard .= "<tr><td>{$rank}</td>
+					  <td>{$row['user_name']}</td>
+					  <td>{$row['user_hf_uid']}</td>
+					  <td>{$row['user_current_challenge_id']}</td></tr>";
+
+				$rank++;
+				if(rank > 10) break;
+			}
+		}
+	} 
+
+	catch(PDOException $ex) 
+	{ 
+		 die("Error getting leaderboard: " . $ex); 
+	} 	
 		
 ?>
 
@@ -89,29 +120,7 @@
 						<td>Challenge ID</td>
 					</tr>
 						<?php
-							try 
-							{ 
-								$result = $db->query("SELECT user_name, user_hf_uid, user_current_challenge_id FROM users ORDER BY user_current_challenge_id DESC");
-								$rank = 1;
-
-								if ($result) {
-									while ($row = $result->fetch()) {
-										echo "<tr><td>{$rank}</td>
-											  <td>{$row['user_name']}</td>
-											  <td>{$row['user_hf_uid']}</td>
-											  <td>{$row['user_current_challenge_id']}</td></tr>";
-
-										$rank++;
-										if(rank > 10) break;
-									}
-								}
-							} 
-			
-							catch(PDOException $ex) 
-							{ 
-								 die("Error getting leaderboard: " . $ex); 
-							} 
-							
+							echo $leaderboard;
 						?>
 					</tbody>
 				</table>
