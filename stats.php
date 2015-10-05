@@ -33,7 +33,7 @@
 		if ($result) {
 			while ($row = $result->fetch()) {
 				
-				if(rank == 1) {
+				if($rank == 1) {
 					$maxChallengeID = $row['user_current_challenge_id'];
 				}
 				
@@ -52,6 +52,18 @@
 	{ 
 		 die("Error getting leaderboard: " . $ex); 
 	} 	
+	
+	$graphData = "";
+	for ($i = 1; $i <= $maxChallengeID; $i++) {
+		
+		$result = $db->prepare("SELECT count(*) FROM users WHERE user_current_challenge_id = :cid"); 
+		$result->bindParam(':cid', $i, PDO::PARAM_INT);
+		$result->execute(); 
+		$numberOfPeople = $result->fetchColumn(); 
+		
+		$graphData .= "{ probNum: '" . $i . "', curr: " . $numberOfPeople . " }";
+		if($i < $maxChallengeID) $graphData .= ",";
+	} 
 		
 ?>
 
@@ -94,11 +106,7 @@
 			element: 'stats',
 	
 			data: [
-			{ probNum: '0', curr: 20 },
-			{ probNum: '1', curr: 10 },
-			{ probNum: '2', curr: 5 },
-			{ probNum: '3', curr: 5 },
-			{ probNum: '4', curr: 20 }
+				<?php echo $graphData; ?>
 			],
 	
 			xkey: 'probNum',
