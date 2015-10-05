@@ -8,7 +8,8 @@
       <meta name="author" content="Divine">
 
       <!-- CSS -->
-      <link rel="stylesheet" href="css/style1.css">
+		<link rel="stylesheet" href="css/style3.css">
+	  <link rel="stylesheet" href="css/reset.css">
     </head>
     <body>
 

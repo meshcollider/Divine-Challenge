@@ -8,7 +8,8 @@
       <meta name="author" content="Divine">
 
       <!-- CSS -->
-      <link rel="stylesheet" href="css/style1.css">
+      <link rel="stylesheet" href="css/reset.css">
+	  <link rel="stylesheet" href="css/style3.css">
     </head>
     <body>
 
@@ -21,8 +22,6 @@
 			<input id="user_name" type="text" name="user_name" required /><br /><br />
 			<label for="user_password"><?php echo WORDING_PASSWORD; ?></label><br />
 			<input id="user_password" type="password" name="user_password" autocomplete="off" required /><br /><br />
-			<input type="checkbox" id="user_rememberme" name="user_rememberme" value="1" />
-			<label for="user_rememberme"><?php echo WORDING_REMEMBER_ME; ?></label><br /><br />
 			<input type="submit" class="btn" name="login" value="<?php echo WORDING_LOGIN; ?>" />
 		</form>
 		
