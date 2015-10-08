@@ -14,6 +14,11 @@
 		<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
 		<script type='text/javascript' src='js/jquery.particleground.min.js'></script>
 		<script type='text/javascript' src='js/lol.js'></script>
+		<script type="text/javascript">
+			function submitForm() {
+				document.getElementById('loginform').submit();
+			}
+		</script>
     </head>
     <body>
 
@@ -23,12 +28,12 @@
 	
 
 		<p>Please Login</p><br />
-		<form method="post" action="panel" name="loginform">
+		<form method="post" action="panel" name="loginform" id="loginform" >
 			<label for="user_name"><?php echo WORDING_USERNAME; ?></label><br />
 			<input id="user_name" type="text" name="user_name" required /><br /><br />
 			<label for="user_password"><?php echo WORDING_PASSWORD; ?></label><br />
 			<input id="user_password" type="password" name="user_password" autocomplete="off" required /><br /><br />
-			<input type="submit" class="btn" name="login" value="<?php echo WORDING_LOGIN; ?>" />
+			<a href="javascript: submitForm()" class="btn" name="login"><?php echo WORDING_LOGIN; ?></div>
 		</form>
 		
 		<br />

@@ -14,6 +14,11 @@
 		<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
 		<script type='text/javascript' src='js/jquery.particleground.min.js'></script>
 		<script type='text/javascript' src='js/lol.js'></script>
+		<script type="text/javascript">
+			function submitForm() {
+				document.getElementById('registerform').submit();
+			}
+		</script>
     </head>
     <body>
 
@@ -24,7 +29,7 @@
 		<p>Register for the Divine Challenge</p><br />
 		<!-- show registration form, but only if we didn't submit already -->
 		<?php if (!$registration->registration_successful && !$registration->verification_successful) { ?>
-		<form method="post" action="register.php" name="registerform">
+		<form method="post" action="register.php" name="registerform" id="registerform">
 			<label for="user_uid">Hackforums UID</label>
 			<input id="user_uid" type="number" step="1" min="1" name="user_uid" required /><br />
 			(Make sure this is correct, you will need this to claim prizes and in case you forget your password)<br /><br />
@@ -43,7 +48,7 @@
 			<label><?php echo WORDING_REGISTRATION_CAPTCHA; ?></label>
 			<input type="text" name="captcha" required /><br /><br />
 
-			<input type="submit" class="btn" name="register" value="<?php echo WORDING_REGISTER; ?>" />
+			<a href="javascript: submitForm()" class="btn" name="register"><?php echo WORDING_REGISTER; ?></div>
 		</form>
 		<?php } ?>
 
