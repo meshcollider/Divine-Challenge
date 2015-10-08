@@ -10,12 +10,18 @@
       <!-- CSS -->
       <link rel="stylesheet" href="css/reset.css">
 	  <link rel="stylesheet" href="css/style3.css">
+	  	    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+		<script type='text/javascript' src='js/jquery.particleground.min.js'></script>
+		<script type='text/javascript' src='js/lol.js'></script>
     </head>
     <body>
 
+<div id="particles">
+  <div class="intro">
 	<?php include('_header.php'); ?>
 	
-	<div align="center">
+
 		<p>Please Login</p><br />
 		<form method="post" action="panel" name="loginform">
 			<label for="user_name"><?php echo WORDING_USERNAME; ?></label><br />
@@ -29,6 +35,7 @@
 		<a href="register"><?php echo WORDING_REGISTER_NEW_ACCOUNT; ?></a>
 	</div>
 	<?php include('_footer.php'); ?>
+	</div>
    </body>
 </html>
 
