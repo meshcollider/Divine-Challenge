@@ -34,8 +34,12 @@ require_once('classes/Login.php');
 // so this single line handles the entire login process.
 $login = new Login();
 
+if (new DateTime() < new DateTime("2015-10-12 16:00:00") && !(isset($_GET['divine']))) {
+    //Contest hasn't started yet, less that the 12th of october at 4pm UTC
+	include("wait.php");
+}
 // ... ask if we are logged in here:
-if ($login->isUserLoggedIn() == true) {
+else if ($login->isUserLoggedIn() == true) {
     // the user is logged in. you can do whatever you want here.
     // for demonstration purposes, we simply show the "you are logged in" view.
     include("views/panel.php");
