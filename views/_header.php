@@ -7,7 +7,7 @@
 if (isset($login)) {
     if ($login->errors) {
         foreach ($login->errors as $error) {
-            echo $error;
+            echo "<div style='color:#990066'>" . $error . "</div>";
         }
     }
     if ($login->messages) {
