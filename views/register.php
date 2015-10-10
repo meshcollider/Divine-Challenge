@@ -28,6 +28,11 @@
 <div id="particles">
 	<div class="intro">
 	<?php include('_header.php'); ?>
+	<style>
+	    #header p {
+	    	display: none;
+	    }
+	</style>
 		<!-- show registration form, but only if we didn't submit already -->
 		<?php if (!$registration->registration_successful && !$registration->verification_successful) { ?>
 		<p>Register for the Divine Challenge</p>
