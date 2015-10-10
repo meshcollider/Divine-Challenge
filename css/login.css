@@ -182,7 +182,7 @@ input {
 }
 
 #login span {
-	color: #676767;
+	color: #fff;
 	display: block;
 	height: 48px;
 	line-height: 48px;
@@ -209,7 +209,7 @@ input {
 	border-right: 2px solid #fff;
 	border-left: 2px solid #fff;
 	padding-left: 36px;
-	width: 204px;
+	width: 256px;
 }
 
 #login input[type="password"] {
@@ -226,7 +226,7 @@ input {
 	border-left: 2px solid #fff;
 	margin-bottom: 20px;
 	padding-left: 36px;
-	width: 204px;
+	width: 256px;
 }
 
 /** 

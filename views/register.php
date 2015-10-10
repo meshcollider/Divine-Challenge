@@ -28,21 +28,18 @@
 <div id="particles">
 	<div class="intro">
 	<?php include('_header.php'); ?>
-		<p>Register for the Divine Challenge</p><br />
+		<p>Register for the Divine Challenge</p>
 		<!-- show registration form, but only if we didn't submit already -->
 		<?php if (!$registration->registration_successful && !$registration->verification_successful) { ?>
 		<form method="post" action="register.php" name="registerform" id="registerform">
 			<div id="register">
 				<span class="fontawesome-user"></span><input type="text" required pattern="[a-zA-Z0-9]{2,64}" placeholder="Username" id="user_name" name="user_name" class="username" />
-				<span class="fontawesome-user"></span><input type="number" step="1" min="1" required placeholder="HF UID" id="user_uid" name="user_uid" class="HFUID" />
+				<input type="number" step="1" min="1" required placeholder="HF UID" id="user_uid" name="user_uid" class="HFUID" />
 				<span class="fontawesome-lock"></span><input type="password" required pattern=".{6,}" placeholder="Password" id="user_password" name="user_password" autocomplete="off" class="pass" /> 
-				<span class="fontawesome-lock"></span><input type="password" required pattern=".{6,}" placeholder="Repeat Password" id="user_password_repeat" name="user_password_repeat" class="pass_repeat" autocomplete="off" />
-				(Make sure your HF UID is correct, you will need this to claim prizes and in case you forget your password)
+				<input type="password" required pattern=".{6,}" placeholder="Repeat Password" id="user_password_repeat" name="user_password_repeat" class="pass_repeat" autocomplete="off" />
 				
-				<br /><br />
-				<label>Enter the following text:</label><br />
 				<img src="tools/showCaptcha.php" alt="captcha" /><br />
-				<input type="text" name="captcha" class="captcha" required />
+				<input type="text" name="captcha" class="captcha" placeholder="Captcha" required />
 			</div>
 
 			<a href="javascript: submitForm()" class="btn" name="register">Register</a>

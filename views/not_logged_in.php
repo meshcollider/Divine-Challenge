@@ -28,8 +28,8 @@
   <div class="intro">
 	<?php include('_header.php'); ?>
 
-		<p>Please Login</p><br />
-		<form method="post" action="panel" name="loginform" id="loginform" >
+		<p>Please Login</p>
+		<form method="post" action="panel.php" name="loginform" id="loginform" >
 			<div id="login">
 				<span class="fontawesome-user"></span><input type="text" required placeholder="Username" id="user_name" name="user_name" />
 				<span class="fontawesome-lock"></span><input type="password" required placeholder="Password" id="user_password" name="user_password" autocomplete="off" />
