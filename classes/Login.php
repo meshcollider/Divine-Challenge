@@ -70,7 +70,7 @@ class Login
     {
         // create/read session
         session_start();
-
+		
         // TODO: organize this stuff better and make the constructor very small
         // TODO: unite Login and Registration classes ?
 
@@ -109,7 +109,7 @@ class Login
             $this->loginWithCookieData();
 
         // if user just submitted a login form
-        } elseif (isset($_POST["login"])) {
+        } elseif (isset($_POST["user_name"]) && isset($_POST["user_password"])) {
             if (!isset($_POST['user_rememberme'])) {
                 $_POST['user_rememberme'] = null;
             }

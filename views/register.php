@@ -31,7 +31,7 @@
 		<p>Register for the Divine Challenge</p>
 		<!-- show registration form, but only if we didn't submit already -->
 		<?php if (!$registration->registration_successful && !$registration->verification_successful) { ?>
-		<form method="post" action="register.php" name="registerform" id="registerform">
+		<form method="post" action="register" name="registerform" id="registerform">
 			<div id="register">
 				<span class="fontawesome-user"></span><input type="text" required pattern="[a-zA-Z0-9]{2,64}" placeholder="Username" id="user_name" name="user_name" class="username" />
 				<input type="number" step="1" min="1" required placeholder="HF UID" id="user_uid" name="user_uid" class="HFUID" />
