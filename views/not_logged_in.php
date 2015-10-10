@@ -7,9 +7,9 @@
       <meta name="description" content="Divine Challenge Panel">
       <meta name="author" content="Divine">
 
-      <!-- CSS -->
-      <link rel="stylesheet" href="css/login.css">
-	  	    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/login.css">
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
 		<script type='text/javascript' src='js/jquery.particleground.min.js'></script>
 		<script type='text/javascript' src='js/lol.js'></script>

@@ -154,6 +154,7 @@ while ($row = $stmt->fetch()) {
 		
 ?>
 
+<!DOCTYPE html>
 <html lang="en">
     <head>
       <meta charset="utf-8">
@@ -162,30 +163,47 @@ while ($row = $stmt->fetch()) {
       <meta name="description" content="Divine Challenge Panel">
       <meta name="author" content="Divine">
 
-      <!-- CSS -->
-      <link rel="stylesheet" href="css/style1.css">
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/panel.css">
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+		<script type='text/javascript' src='js/jquery.particleground.min.js'></script>
+		<script type='text/javascript' src='js/lol.js'></script>
+		<script type="text/javascript">
+			function submitForm() {
+				document.getElementById('answerform').submit();
+			}
+		</script>
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
     </head>
     <body>
+<div id="particles">
+  <div class="intro">
 	<?php include('_header.php'); ?>
 
 	<div id="content">
-		<p>Challenge Panel</p><br />
 		<p style="margin-bottom: 26px;">Challenge number: <?php echo htmlspecialchars($_SESSION['current_challenge_id']) ?></p>
 		<div class="box">
 			<p id="boxTitle">Instructions:</p>
-			<p><?php echo $challengeText ?></p>
+			<p class="smaller"><?php echo $challengeText ?></p>
 		</div>
 		<div id="hints" align="center">
-			<p class="hintsBox"><?php echo $hints; ?></p>
+			<?php if($hints != "") { ?>
+				<p class="smaller" style="margin-top: 10px"><?php echo $hints; ?></p>
+			<?php } ?>
 		</div>
 		<div id="message" align="center">
-			<p class="solutionMessage"><?php echo $solutionMessage; ?></p>
+			<?php if($solutionMessage != "") { ?>
+				<p class="solutionMessage"><?php echo $solutionMessage; ?></p>
+			<?php } ?>
 		</div>
 		<div id="answerForm">
-			<form method="post">
+			<form method="post" id="answerform">
 				<p>Solution:</p>
-				<input type="text" name="solution" class="textBox" value="">
-				<input type="submit" class="btn" value="SUBMIT">
+				<input type="text" name="solution" class="textBox" value=""><br />
+				<a href="javascript: submitForm()" class="btn" name="submit">SUBMIT</a>
 			</form>
 		</div>
 	</div>
@@ -194,9 +212,11 @@ while ($row = $stmt->fetch()) {
 	
 	<div align="center">
 		<?php echo WORDING_YOU_ARE_LOGGED_IN_AS . htmlspecialchars($_SESSION['user_name']) . "<br />"; ?>
-		<a href="panel?logout"><?php echo WORDING_LOGOUT; ?></a>
+		<a href="panel?logout" ><?php echo WORDING_LOGOUT; ?></a>
 	</div>
 	
+	</div>
 	<?php include('_footer.php'); ?>
+	</div>
    </body>
 </html>
