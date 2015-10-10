@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>php-login-advanced</title>
-</head>
-<body>
     <div id="header">
 	<p>Welcome to the</p>
 	<h1>DIVINE CHALLENGE</h1>
@@ -40,4 +33,3 @@ if (isset($registration)) {
     }
 }
 ?>
-</body>

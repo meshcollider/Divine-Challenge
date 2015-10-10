@@ -50,7 +50,7 @@ define("MESSAGE_USERNAME_INVALID", '<p class="warning">Username does not fit the
 define("MESSAGE_USERNAME_SAME_LIKE_OLD_ONE", '<p class="warning">Sorry, that username is the same as your current one. Please choose another one.</p><br>');
 
 // views
-define("WORDING_BACK_TO_LOGIN", "Back to Login Page");
+define("WORDING_BACK_TO_LOGIN", "Go Back");
 define("WORDING_REGISTRATION_SUCCESSFUL", '<p class="success">Registration Successful</p><br>');
 define("WORDING_CHANGE_EMAIL", "Change email");
 define("WORDING_CHANGE_PASSWORD", "Change password");

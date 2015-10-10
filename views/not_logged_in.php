@@ -8,8 +8,7 @@
       <meta name="author" content="Divine">
 
       <!-- CSS -->
-      <link rel="stylesheet" href="css/reset.css">
-	  <link rel="stylesheet" href="css/style3.css">
+      <link rel="stylesheet" href="css/login.css">
 	  	    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
 		<script type='text/javascript' src='js/jquery.particleground.min.js'></script>
@@ -19,25 +18,26 @@
 				document.getElementById('loginform').submit();
 			}
 		</script>
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
     </head>
     <body>
 
 <div id="particles">
   <div class="intro">
 	<?php include('_header.php'); ?>
-	
 
 		<p>Please Login</p><br />
 		<form method="post" action="panel" name="loginform" id="loginform" >
-			<label for="user_name"><?php echo WORDING_USERNAME; ?></label><br />
-			<input id="user_name" type="text" name="user_name" required /><br /><br />
-			<label for="user_password"><?php echo WORDING_PASSWORD; ?></label><br />
-			<input id="user_password" type="password" name="user_password" autocomplete="off" required /><br /><br />
-			<a href="javascript: submitForm()" class="btn" name="login"><?php echo WORDING_LOGIN; ?></div>
+			<div id="login">
+				<span class="fontawesome-user"></span><input type="text" required placeholder="Username" id="user_name" name="user_name" />
+				<span class="fontawesome-lock"></span><input type="password" required placeholder="Password" id="user_password" name="user_password" autocomplete="off" />
+			</div>
+			<a href="javascript: submitForm()" class="btn" name="login">Login</a>
+			<a href="index" class="btn">Go Back</a>
 		</form>
 		
-		<br />
-		<a href="register"><?php echo WORDING_REGISTER_NEW_ACCOUNT; ?></a>
 	</div>
 	<?php include('_footer.php'); ?>
 	</div>
