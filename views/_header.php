@@ -23,7 +23,7 @@ if (isset($login)) {
 if (isset($registration)) {
     if ($registration->errors) {
         foreach ($registration->errors as $error) {
-            echo $error;
+            echo "<div style='color:#990066'>" . $error . "</div>";
         }
     }
     if ($registration->messages) {
