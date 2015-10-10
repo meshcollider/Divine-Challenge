@@ -98,7 +98,6 @@
     <body>
 	<div id="header">
 		<div class="wrap">
-			<p>Welcome to the</p>
 			<h1>DIVINE CHALLENGE</h1>
 		</div>
 	</div>
