@@ -92,6 +92,7 @@
 			
     </head>
     <body>
+<div class="page-wrap">
 	<div id="header">
 		<div class="wrap">
 			<h1>DIVINE CHALLENGE</h1>
@@ -99,6 +100,7 @@
 	</div>
 	<div id="content">
 		<p id="title">STATS</p>
+		
 		<div id="stats" style="height: 80%; width: 60%; margin: auto;"></div>
 		<script>
 			new Morris.Line({
@@ -119,6 +121,7 @@
 			parseTime: false
 			});
 		</script>
+		
 		<div id="tableForm">
 			<p style="font-size: 1.1em;">REGISTERED PARTICIPANTS: <?php echo $numberRegistered; ?></p>
 			<div class="datagrid">
@@ -136,11 +139,13 @@
 					</tbody>
 				</table>
 			</div>
-		<div id="footer">
+		</div>
+	</div>
+</div>
+		<div id="footer" class="footer">
 			<p class="alignLeft">Copyright (C) Divine 2015</p>
 			<p class="alignRight"><a href="http://hackforums.net/showthread.php?tid=4990509">Support Thread</a></p>
 			<div style="clear: both;"></div>
 		</div>
-	</div>
     </body>
 </html>

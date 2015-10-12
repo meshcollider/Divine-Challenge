@@ -91,17 +91,23 @@ Table
 Footer
 **/
 
-#footer {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	height: 50px;
-	width: 100%;
-}
-
 #footer p  {
 	margin-right: 15px;
 	margin-top: 12px;
+}
+
+.page-wrap {
+  min-height: 100%;
+  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.footer, .page-wrap:after {
+  height: 50px; 
 }
 
 .alignLeft {
