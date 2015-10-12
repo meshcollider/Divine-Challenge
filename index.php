@@ -30,6 +30,7 @@
 	<p class="chaffle" style="display: inline-block" data-lang="ja-hiragana">Test Your Knowledge and Skill</p><br />
     <a href="panel" class="btn">Login</a> 
     <a href="register" class="btn">Register</a>
+	<a href="stats" class="btn">Stats</a>
   </div>
 </div>
 
