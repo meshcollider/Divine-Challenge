@@ -62,7 +62,7 @@
 		$numberOfPeople = $result->fetchColumn(); 
 		
 		$graphData .= "{ probNum: '" . $i . "', curr: " . $numberOfPeople . " }";
-		if($i < $maxChallengeID) $graphData .= ",";
+		if($i < $maxChallengeID) $graphData .= ",\n";
 	} 
 		
 ?>
@@ -112,7 +112,11 @@
 
 			ykeys: ['curr'],
 
-			labels: ['Curr']
+			labels: ['Number of members'],
+			
+			resize: true,
+			
+			parseTime: false
 			});
 		</script>
 		<div id="tableForm">
