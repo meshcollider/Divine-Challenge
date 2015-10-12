@@ -30,22 +30,31 @@ require_once('libraries/PHPMailer.php');
 // load the login class
 require_once('classes/Login.php');
 
+// include the functions
+require_once('tools/functions.php');
+
 // create a login object. when this object is created, it will do all login/logout stuff automatically
 // so this single line handles the entire login process.
 $login = new Login();
 
-if (new DateTime() < new DateTime("2015-10-16 16:00:00")) {
-    //Contest hasn't started yet, less that the 12th of october at 4pm UTC
-	include("wait.php");
+if(isMobile()) {
+	include("views/mobile.php");
 }
-// ... ask if we are logged in here:
-else if ($login->isUserLoggedIn() == true) {
-    // the user is logged in. you can do whatever you want here.
-    // for demonstration purposes, we simply show the "you are logged in" view.
-    include("views/panel.php");
+else {
+	if (new DateTime() < new DateTime("2015-10-16 16:00:00")) {
+		//Contest hasn't started yet, less that the 12th of october at 4pm UTC
+		include("wait.php");
+	}
+	// ... ask if we are logged in here:
+	else if ($login->isUserLoggedIn() == true) {
+		// the user is logged in. you can do whatever you want here.
+		// for demonstration purposes, we simply show the "you are logged in" view.
+		include("views/panel.php");
 
-} else {
-    // the user is not logged in. you can do whatever you want here.
-    // for demonstration purposes, we simply show the "you are not logged in" view.
-    include("views/not_logged_in.php");
+	} else {
+		// the user is not logged in. you can do whatever you want here.
+		// for demonstration purposes, we simply show the "you are not logged in" view.
+		include("views/not_logged_in.php");
+	}
 }
+

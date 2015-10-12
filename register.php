@@ -17,6 +17,9 @@ require_once('translations/en.php');
 // include the PHPMailer library
 require_once('libraries/PHPMailer.php');
 
+// include the functions
+require_once('tools/functions.php');
+
 // load the registration class
 require_once('classes/Registration.php');
 
@@ -25,4 +28,9 @@ require_once('classes/Registration.php');
 $registration = new Registration();
 
 // showing the register view (with the registration form, and messages/errors)
-include("views/register.php");
+if(isMobile()) {
+	include("views/mobile.php");
+}
+else {
+	include("views/register.php");
+}
