@@ -62,10 +62,7 @@ Table
 } 
 
 .datagrid {
-  font: normal 12px/150% Courier New, Courier, monospace; 
-  background: #fff; 
-  overflow: hidden; 
-  border: 2px solid #004BFF; 
+  border: 2px solid #fff; 
   -webkit-border-radius: 3px; 
   -moz-border-radius: 3px; 
   border-radius: 3px; 
@@ -76,10 +73,10 @@ Table
 }
 
 .datagrid table tbody td { 
-  color: #7b68ee; 
-  border-left: 2px solid #004BFF;
+  color: #fff;
+  border-left: 2px solid #fff;
   font-size: 17px;
-  border-bottom: 2px solid #004BFF;
+  border-bottom: 2px solid #fff;
   font-weight: normal; 
 }
 

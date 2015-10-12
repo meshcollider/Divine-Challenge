@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('America/Halifax');
 include 'count/GIFEncoder.class.php';
-$time = 'next monday';//$_GET['time'];
+$time = 'next friday';//$_GET['time'];
 $future_date = new DateTime(date('r',strtotime($time)));
 $time_now = time();
 $now = new DateTime(date('r', $time_now));

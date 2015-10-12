@@ -34,7 +34,7 @@ require_once('classes/Login.php');
 // so this single line handles the entire login process.
 $login = new Login();
 
-if (new DateTime() < new DateTime("2015-10-12 16:00:00")) {
+if (new DateTime() < new DateTime("2015-10-16 16:00:00")) {
     //Contest hasn't started yet, less that the 12th of october at 4pm UTC
 	include("wait.php");
 }

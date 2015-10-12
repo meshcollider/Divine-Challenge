@@ -177,6 +177,8 @@ while ($row = $stmt->fetch()) {
 		<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+		<link rel="shortcut icon" type="image/png" href="../resources/ficon2.png" />
+		<link rel="shortcut icon" type="image/png" href="../resources/ficon2.png" />
     </head>
     <body>
 <div id="particles">

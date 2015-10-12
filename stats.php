@@ -73,7 +73,6 @@
 		<meta charset="UTF-8" /> 
 		<title>Stats - Divine Challenge</title> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/reset.css" />
 		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
 		<script type='text/javascript' src='js/jquery.particleground.min.js'></script>
@@ -83,12 +82,9 @@
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="css/style3.css">
-		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-		<style>
-			.morris-default-style {
-				color: #FFF;
-			}
-		</style>	
+		<link rel="stylesheet" href="css/morris.css">	
+		<link rel="stylesheet" href="css/reset.css" />
+		
 		<!-- JS -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>

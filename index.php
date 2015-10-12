@@ -10,6 +10,8 @@
   <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
   <script type='text/javascript' src='js/jquery.particleground.min.js'></script>
   <script type='text/javascript' src='js/lol.js'></script>
+  	<link rel="shortcut icon" type="image/png" href="../resources/ficon2.png" />
+	<link rel="shortcut icon" type="image/png" href="../resources/ficon2.png" />
   <script src="js/chaffle.min.js"></script>
   <script>
   
